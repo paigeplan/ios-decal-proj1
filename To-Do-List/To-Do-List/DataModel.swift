@@ -42,6 +42,7 @@ class DataModel {
         while i < tasks.count {
             if tasks[i].completed && olderThan24Hours(tasks[i].completedDate) {
                 tasks.removeAtIndex(i)
+                print("removing old tasks")
                 completedTasksCount = completedTasksCount - 1
             }
             i++

@@ -20,8 +20,6 @@ class ToDoListTableViewController: UITableViewController, ToDoListViewController
     
     var dataModel = DataModel()
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -33,12 +31,15 @@ class ToDoListTableViewController: UITableViewController, ToDoListViewController
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
-        dataModel.deleteCompletedTasksOver24HoursOld()
-        tableView.reloadData()
         
     }
     
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        dataModel.deleteCompletedTasksOver24HoursOld()
+        tableView.reloadData()
+
+    }
 
 
     override func didReceiveMemoryWarning() {
@@ -123,8 +124,6 @@ class ToDoListTableViewController: UITableViewController, ToDoListViewController
         let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as!ToDoListTableViewCell
         
         let task = dataModel.tasks[indexPath.row]
-        print("got here")
-        
         
         if task.completed {
             currentCell.checkmarkView.image = UIImage(named: "unchecked")
