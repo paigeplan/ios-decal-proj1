@@ -33,7 +33,7 @@ class ToDoListTableViewController: UITableViewController, ToDoListViewController
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
-
+        dataModel.deleteCompletedTasksOver24HoursOld()
         tableView.reloadData()
         
     }
@@ -66,8 +66,13 @@ class ToDoListTableViewController: UITableViewController, ToDoListViewController
         let taskAtIndexPath = dataModel.tasks[indexPath.row]
         cell.taskLabel.text = taskAtIndexPath.title
         cell.dateLabel.text = taskAtIndexPath.date
-        
-        // Configure the cell...
+        if taskAtIndexPath.completed {
+            cell.checkmarkView.image = UIImage(named: "checked")
+        }
+        else {
+            cell.checkmarkView.image = UIImage(named: "unchecked")
+        }
+
 
         return cell
     }
