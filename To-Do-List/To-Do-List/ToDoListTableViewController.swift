@@ -16,15 +16,11 @@
 
 import UIKit
 
-class ToDoListTableViewController: UITableViewController {
+class ToDoListTableViewController: UITableViewController, ToDoListViewController {
     
-    struct Task {
-        var title: String = ""
-        var date: String = ""
-        
-    }
+    var dataModel = DataModel()
     
-    var tasks: [Task] = []
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,20 +32,14 @@ class ToDoListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        createTask("Test Task", date: "Wed 10/7")
-        createTask("Test wafefw", date: "Wed 10/7fwaef")
+        dataModel.createTask("Test Task", date: "Wed 10/7")
+        dataModel.createTask("Test wafefw", date: "Wed 10/7fwaef")
         tableView.reloadData()
         
     }
     
     
-    func createTask(title: String, date: String) {
-        var newTask = Task()
-        newTask.title = title
-        newTask.date = date
-        tasks.append(newTask)
-        
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -66,14 +56,14 @@ class ToDoListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return tasks.count
+        return dataModel.tasks.count
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ToDoCell", forIndexPath: indexPath) as! ToDoListTableViewCell
         
-        let taskAtIndexPath = tasks[indexPath.row]
+        let taskAtIndexPath = dataModel.tasks[indexPath.row]
         cell.taskLabel.text = taskAtIndexPath.title
         cell.dateLabel.text = taskAtIndexPath.date
         
@@ -97,7 +87,7 @@ class ToDoListTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            tasks.removeAtIndex(indexPath.row)
+            dataModel.tasks.removeAtIndex(indexPath.row)
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -119,14 +109,18 @@ class ToDoListTableViewController: UITableViewController {
     }
     */
 
-    /*
+   
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
+        var destination = segue.destinationViewController as! ToDoListViewController
+        destination.dataModel = dataModel
     }
-    */
+   
 
 }
