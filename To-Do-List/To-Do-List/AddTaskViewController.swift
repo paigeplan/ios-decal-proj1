@@ -26,6 +26,7 @@ class AddTaskViewController: UIViewController, ToDoListViewController {
         if let text = taskTextField.text {
             dataModel.createTask(text, date: dateString)
         }
+        self.performSegueWithIdentifier("addToMain", sender: nil)
         
     }
     override func viewDidLoad() {
@@ -40,14 +41,18 @@ class AddTaskViewController: UIViewController, ToDoListViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+  
+     //MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     /* In a storyboard-based application, you will often want to do a little preparation before navigation
+        */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+         //Get the new view controller using segue.destinationViewController.
+         //Pass the selected object to the new view controller.
+        let destination = segue.destinationViewController as! UINavigationController
+        var mainViewController = destination.viewControllers[0] as! ToDoListViewController
+        mainViewController.dataModel = dataModel
     }
-    */
+
 
 }

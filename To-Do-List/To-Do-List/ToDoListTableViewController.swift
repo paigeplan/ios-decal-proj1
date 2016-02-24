@@ -32,8 +32,8 @@ class ToDoListTableViewController: UITableViewController, ToDoListViewController
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        dataModel.createTask("Test Task", date: "Wed 10/7")
-        dataModel.createTask("Test wafefw", date: "Wed 10/7fwaef")
+
+
         tableView.reloadData()
         
     }
@@ -86,8 +86,10 @@ class ToDoListTableViewController: UITableViewController, ToDoListViewController
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             dataModel.tasks.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -109,6 +111,28 @@ class ToDoListTableViewController: UITableViewController, ToDoListViewController
     }
     */
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let indexPath = tableView.indexPathForSelectedRow!
+        
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as!ToDoListTableViewCell
+        
+        let task = dataModel.tasks[indexPath.row]
+        print("got here")
+        
+        
+        if task.completed {
+            currentCell.checkmarkView.image = UIImage(named: "unchecked")
+            dataModel.completedTasksCount -= 1
+
+        }
+        else {
+            currentCell.checkmarkView.image = UIImage(named: "checked")
+            dataModel.completedTasksCount += 1
+
+        }
+        dataModel.toggleCompletedForTask(indexPath.row)
+    }
    
     // MARK: - Navigation
 

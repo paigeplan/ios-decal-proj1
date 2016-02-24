@@ -13,10 +13,12 @@ class DataModel {
     struct Task {
         var title: String = ""
         var date: String = ""
+        var completed: Bool = false
         
     }
     
     var tasks: [Task] = []
+    var completedTasksCount = 0
     
     func createTask(title: String, date: String) {
         var newTask = Task()
@@ -25,5 +27,10 @@ class DataModel {
         tasks.append(newTask)
         
     }
+    
+    func toggleCompletedForTask(index: Int) {
+        tasks[index].completed = !tasks[index].completed
+    }
+
     
 }
