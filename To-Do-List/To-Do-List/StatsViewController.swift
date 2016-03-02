@@ -20,6 +20,7 @@ class StatsViewController: UIViewController, ToDoListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         countNumberLabel.text = String(dataModel.completedTasksCount)
+        dataModel.deleteCompletedTasksOver24HoursOld()
         // Do any additional setup after loading the view.
     }
 

@@ -50,6 +50,7 @@
 		6C55D8DE1C7D5BC300F873B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6C8EF5E51C868F1C0020EF35 /* Task.swift */,
 				6C55D8DC1C7D5AFC00F873B5 /* DataModel.swift */,
 			);
 			name = Model;
@@ -77,7 +78,6 @@
 				6C6A20BB1C76BBEA0028BFC4 /* AppDelegate.swift */,
 				6C6A20BF1C76BBEA0028BFC4 /* Main.storyboard */,
 				6C6A20C21C76BBEA0028BFC4 /* Assets.xcassets */,
-				6C8EF5E51C868F1C0020EF35 /* Task.swift */,
 				6C55D8DE1C7D5BC300F873B5 /* Model */,
 				6C6A20D11C76C2790028BFC4 /* Controller */,
 				6C6A20C41C76BBEA0028BFC4 /* LaunchScreen.storyboard */,

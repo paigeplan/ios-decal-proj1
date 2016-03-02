@@ -51,6 +51,7 @@ class AddTaskViewController: UIViewController, ToDoListViewController {
          //Pass the selected object to the new view controller.
         let destination = segue.destinationViewController as! UINavigationController
         var mainViewController = destination.viewControllers[0] as! ToDoListViewController
+        dataModel.deleteCompletedTasksOver24HoursOld()
         mainViewController.dataModel = dataModel
     }
 

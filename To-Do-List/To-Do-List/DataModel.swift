@@ -9,8 +9,6 @@
 import Foundation
 
 class DataModel {
-
-
     
     var tasks: [Task] = []
     var completedTasksCount = 0
@@ -31,23 +29,27 @@ class DataModel {
     
     func deleteCompletedTasksOver24HoursOld() {
         var i = 0
+        var newTasks: [Task] = []
+        
         while i < tasks.count {
             if tasks[i].completed && olderThan24Hours(tasks[i].completedDate) {
-                tasks.removeAtIndex(i)
-                print("removing old tasks")
                 completedTasksCount = completedTasksCount - 1
+            }
+            else {
+                newTasks.append(tasks[i])
             }
             i++
         }
+
+        tasks = newTasks
     }
 
     
     func olderThan24Hours(startingDate: NSDate) -> Bool{
-        let hours = NSCalendar.currentCalendar().components(NSCalendarUnit.Hour, fromDate: startingDate, toDate: NSDate(), options: []).hour
-        if hours >= 24 {
-            return true
-        }
-        return false
+        
+        let yesterday = NSDate(timeIntervalSinceNow: -3600*24)
+        return yesterday.earlierDate(startingDate) == yesterday
+        
     }
     
     
