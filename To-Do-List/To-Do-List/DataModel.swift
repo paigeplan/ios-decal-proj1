@@ -48,7 +48,7 @@ class DataModel {
     func olderThan24Hours(startingDate: NSDate) -> Bool{
         
         let yesterday = NSDate(timeIntervalSinceNow: -3600*24)
-        return yesterday.earlierDate(startingDate) == yesterday
+        return startingDate.earlierDate(yesterday) == startingDate
         
     }
     
