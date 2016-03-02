@@ -10,22 +10,14 @@ import Foundation
 
 class DataModel {
 
-    struct Task {
-        var title: String = ""
-        var date: String = ""
-        var completed: Bool = false
-        var completedDate: NSDate = NSDate()
-        
-    }
+
     
     var tasks: [Task] = []
     var completedTasksCount = 0
     
     
     func createTask(title: String, date: String) {
-        var newTask = Task()
-        newTask.title = title
-        newTask.date = date
+        let newTask = Task(title: title, date: date, completed: false)
         tasks.append(newTask)
         
     }
