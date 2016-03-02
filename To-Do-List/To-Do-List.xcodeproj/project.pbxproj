@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C55D8DB1C7D59F700F873B5 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55D8DA1C7D59F700F873B5 /* AddTaskViewController.swift */; };
+		6C55D8DD1C7D5AFC00F873B5 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55D8DC1C7D5AFC00F873B5 /* DataModel.swift */; };
+		6C55D8E01C7D5C7A00F873B5 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55D8DF1C7D5C7A00F873B5 /* ToDoListViewController.swift */; };
+		6C55D8E21C7D749900F873B5 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55D8E11C7D749900F873B5 /* StatsViewController.swift */; };
 		6C6A20BC1C76BBEA0028BFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A20BB1C76BBEA0028BFC4 /* AppDelegate.swift */; };
 		6C6A20C11C76BBEA0028BFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A20BF1C76BBEA0028BFC4 /* Main.storyboard */; };
 		6C6A20C31C76BBEA0028BFC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A20C21C76BBEA0028BFC4 /* Assets.xcassets */; };
 		6C6A20C61C76BBEA0028BFC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A20C41C76BBEA0028BFC4 /* LaunchScreen.storyboard */; };
 		6C6A20CE1C76C2510028BFC4 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A20CD1C76C2510028BFC4 /* ToDoListTableViewController.swift */; };
 		6C6A20D01C76C2710028BFC4 /* ToDoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A20CF1C76C2710028BFC4 /* ToDoListTableViewCell.swift */; };
-		6C6A20D31C76C4B80028BFC4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A20D21C76C4B80028BFC4 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C55D8DA1C7D59F700F873B5 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		6C55D8DC1C7D5AFC00F873B5 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		6C55D8DF1C7D5C7A00F873B5 /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
+		6C55D8E11C7D749900F873B5 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		6C6A20B81C76BBEA0028BFC4 /* To-Do-List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-Do-List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C6A20BB1C76BBEA0028BFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C6A20C01C76BBEA0028BFC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -25,7 +32,6 @@
 		6C6A20C71C76BBEA0028BFC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C6A20CD1C76C2510028BFC4 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
 		6C6A20CF1C76C2710028BFC4 /* ToDoListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewCell.swift; sourceTree = "<group>"; };
-		6C6A20D21C76C4B80028BFC4 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C55D8DE1C7D5BC300F873B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C55D8DC1C7D5AFC00F873B5 /* DataModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		6C6A20AF1C76BBEA0028BFC4 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +75,7 @@
 				6C6A20BB1C76BBEA0028BFC4 /* AppDelegate.swift */,
 				6C6A20BF1C76BBEA0028BFC4 /* Main.storyboard */,
 				6C6A20C21C76BBEA0028BFC4 /* Assets.xcassets */,
+				6C55D8DE1C7D5BC300F873B5 /* Model */,
 				6C6A20D11C76C2790028BFC4 /* Controller */,
 				6C6A20C41C76BBEA0028BFC4 /* LaunchScreen.storyboard */,
 				6C6A20C71C76BBEA0028BFC4 /* Info.plist */,
@@ -71,9 +86,11 @@
 		6C6A20D11C76C2790028BFC4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6C6A20CF1C76C2710028BFC4 /* ToDoListTableViewCell.swift */,
+				6C55D8E11C7D749900F873B5 /* StatsViewController.swift */,
 				6C6A20CD1C76C2510028BFC4 /* ToDoListTableViewController.swift */,
-				6C6A20D21C76C4B80028BFC4 /* Task.swift */,
+				6C55D8DA1C7D59F700F873B5 /* AddTaskViewController.swift */,
+				6C6A20CF1C76C2710028BFC4 /* ToDoListTableViewCell.swift */,
+				6C55D8DF1C7D5C7A00F873B5 /* ToDoListViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -149,10 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C6A20D31C76C4B80028BFC4 /* Task.swift in Sources */,
 				6C6A20BC1C76BBEA0028BFC4 /* AppDelegate.swift in Sources */,
+				6C55D8E01C7D5C7A00F873B5 /* ToDoListViewController.swift in Sources */,
 				6C6A20CE1C76C2510028BFC4 /* ToDoListTableViewController.swift in Sources */,
 				6C6A20D01C76C2710028BFC4 /* ToDoListTableViewCell.swift in Sources */,
+				6C55D8E21C7D749900F873B5 /* StatsViewController.swift in Sources */,
+				6C55D8DB1C7D59F700F873B5 /* AddTaskViewController.swift in Sources */,
+				6C55D8DD1C7D5AFC00F873B5 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +322,7 @@
 				6C6A20CC1C76BBEA0028BFC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
